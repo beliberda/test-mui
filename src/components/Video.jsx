@@ -7,6 +7,7 @@ const Item = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.primary = "#2197d7",
   Color: theme.palette.secondary = "#ffffff",
   textAlign: "center",
+
   height: 293,
   boxShadow: "none",
   borderRadius: 0,

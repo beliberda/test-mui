@@ -7,6 +7,7 @@ import line from "../assets/line-h-svgrepo-com.svg";
 const Item = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#d7d7d7" : "#ffffff",
   ...theme.typography.body2,
+
   color: theme.palette.text.secondary,
   height: 293,
   borderRadius: 0,

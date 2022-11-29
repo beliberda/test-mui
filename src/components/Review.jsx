@@ -13,7 +13,7 @@ const ItemCard = styled(Card)(({theme})=>({
   backgroundColor: "#ffffff",
   textAlign: "center",
   height: 293,
-  minWidth: 293,
+
   boxShadow: "none",
   borderRadius: 0,
   border: 0,

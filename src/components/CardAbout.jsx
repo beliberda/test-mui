@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardContent,
@@ -29,14 +30,16 @@ const theme = createTheme({
 const ItemCard = styled(Card)(({ theme }) => ({
   backgroundColor: "#d7d7d7",
   color: theme.palette.text.primary,
+
   minHeight: 293,
-  maxHeight: 586,
+  height:293,
+  maxHeight: 293,
   border: 0,
   borderRadius: 0,
   boxShadow: "none",
 }));
 
-const Line = styled(Card)(({ theme }) => ({
+const Line = styled(Box)(({ theme }) => ({
   backgroundColor: "#282828",
   width: "40px",
   height: "40px",
@@ -62,7 +65,7 @@ export default function CardAbout(params) {
       >
         <ThemeProvider theme={theme}>
           <Typography variant="h1">{params.title}</Typography>
-          <Line></Line>
+          <Line sx={{display: params.line}}></Line>
           <Typography variant="p1">{params.text}</Typography>
           <Button
           variant="contained"
@@ -72,6 +75,7 @@ export default function CardAbout(params) {
               border: "none",
               borderRadius: 0,
               width: 161,
+              display: params.button
             }}
           >
             {params.buttonText}
