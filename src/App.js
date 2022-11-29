@@ -2,7 +2,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import { Container } from "@mui/system";
 import Empty from "./components/Empty";
 import Paginate from "./components/Pagination";
-import Video from "./components/Video";
+import CardButton from "./components/CardButton";
 import CardDescript from "./components/CardDescript";
 import Review from "./components/Review";
 import placeholder from "./assets/placeholder60.png";
@@ -23,17 +23,25 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CardNews from "./components/News";
 import CardForm from "./components/CardForm";
+//Вопрос по гридам, как делать адаптивными их. с md какая-то беда
 
+// Сделал шрифты константой, иначе не работает при передаче в пропсы для цвета
 const yellow = "#ffe400";
 const black = "#282828";
 const white = "#ffffff";
 const pearl = "#fcf3d2";
 const blue = "#2197d7";
 
+// КРАЙНЕ НЕПОНЯТНО, ПОЧЕМУ НЕ РАБОТАЕТ ШРИФТ
+const theme = createTheme({
+  typography: {
+    fontFamily: ['"Rubik"', "sans-serif"].join(","),
+  },
+});
 
 function App() {
   return (
-
+    <ThemeProvider theme={theme}>
       <Container maxWidth="1920px" sx={{ padding: 0 }}>
         <Grid2 container sx={{ flexGrow: 1 }} columns="12">
           <Header />
@@ -52,19 +60,19 @@ function App() {
             />
           </Grid>
           <Grid xs={3}>
-            <Empty/>
+            <Empty />
           </Grid>
           <Grid xs={3}>
-            <Paginate/>
+            <Paginate />
           </Grid>
           <Grid xs={6}>
-            <Empty/>
+            <Empty />
           </Grid>
           <Grid xs={3}>
-            <Video title="Company video" image={video} />
+            <CardButton title="COMPANY VIDEO" image={video} />
           </Grid>
           <Grid xs={3}>
-            <Empty bgColor={black}/>
+            <Empty bgColor={black} />
           </Grid>
           <Grid xs={3}>
             <CardDescript
@@ -73,7 +81,7 @@ function App() {
             />
           </Grid>
           <Grid xs={3}>
-            <Empty/>
+            <Empty />
           </Grid>
           <Grid xs={3}>
             <CardDescript
@@ -84,10 +92,10 @@ function App() {
             />
           </Grid>
           <Grid xs={3}>
-            <Empty/>
+            <Empty />
           </Grid>
           <Grid xs={3}>
-            <Paginate/>
+            <Paginate />
           </Grid>
           <Grid xs={3}>
             <CardDescript
@@ -96,7 +104,7 @@ function App() {
             />
           </Grid>
           <Grid xs={3}>
-            <Empty/>
+            <Empty />
           </Grid>
           <Grid xs={3}>
             <CardDescript
@@ -107,10 +115,14 @@ function App() {
             />
           </Grid>
           <Grid xs={3}>
-            <Video image={pdf} title="DOWNLOAD PRICE" color={yellow}></Video>
+            <CardButton
+              image={pdf}
+              title="DOWNLOAD PRICE"
+              color={yellow}
+            ></CardButton>
           </Grid>
           <Grid xs={3}>
-            <Video image={contact} title="CONTACT US" />
+            <CardButton image={contact} title="CONTACT US" />
           </Grid>
           <Grid xs={6}>
             <SearchInput bgColor={black} />
@@ -118,7 +130,8 @@ function App() {
           <Grid xs={6}>
             <Review
               path={placeholder}
-              text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis omnis, vero temporibus assumenda possimus aut, dignissimos animi amet"
+              title="Michael H. Jhonson"
+              text="Together, we'll couple our knowledge, expertise, and innovative capabilities with your astute knowledge of your business-to maximize and optimize results. This is all accomplished in a number of ways."
             ></Review>
           </Grid>
           <Grid xs={6}>
@@ -132,7 +145,8 @@ function App() {
             <Review
               path={placeholder}
               bgColor={pearl}
-              text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis omnis, vero temporibus assumenda possimus aut, dignissimos animi amet laboriosam dolorum in rem nisi quam?"
+              title="Tony SH. Schults"
+              text="When selecting DMCS as the design-build team, clients benefit in terms of efficiency and continuity that translate into cost savings and optimized schedules. Contact us today and see how DMCS can best serve you from"
             ></Review>
           </Grid>
           <Grid xs={3}>
@@ -144,27 +158,33 @@ function App() {
             />
           </Grid>
           <Grid xs={3}>
-            <CardInfo image={droplet} title="55 000" text="Construnction" />
+            <CardInfo image={droplet} title="124 600" text="Construnction" />
           </Grid>
           <Grid xs={3}>
-          <CardNews bgColor={blue} title='Project Design and Engineering Services'
-          comments='23' data='12 febuary, 2015'
-          />
+            <CardNews
+              bgColor={blue}
+              title="Project Design and Engineering Services"
+              comments="23"
+              data="12 febuary, 2015"
+            />
           </Grid>
           <Grid xs={3}>
             <Review
               path={placeholder}
-              text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis omnis, vero temporibus assumenda possimus aut, dignissimos animi amet"
+              title="David Me. Adams"
+              text="In most urban areas.		
+              construction has already built	
+              existing structures, many having been standing for decades"
             ></Review>
           </Grid>
           <Grid xs={3}>
-            <CardInfo image={gear} title="55 000" text="Procurement" />
+            <CardInfo image={gear} title="18 000" text="Procurement" />
           </Grid>
           <Grid xs={3}>
             <CardInfo
               bgColor={white}
               image={lamp}
-              title="55 000"
+              title="78 150"
               text="Project Managments"
             />
           </Grid>
@@ -179,10 +199,14 @@ function App() {
           </Grid>
 
           <Grid xs={6}>
-            <Empty/>
+            <Empty />
           </Grid>
           <Grid xs={3}>
-            <Video image={twoGears} color={yellow} title='WORK WITH US'></Video>
+            <CardButton
+              image={twoGears}
+              color={yellow}
+              title="WORK WITH US"
+            ></CardButton>
           </Grid>
           <Grid xs={3}>
             <CardAbout
@@ -194,10 +218,10 @@ function App() {
             />
           </Grid>
           <Grid xs={3}>
-            <Empty/>
+            <Empty />
           </Grid>
           <Grid xs={3}>
-            <Paginate/>
+            <Paginate />
           </Grid>
           <Grid xs={3}>
             <CardForm bgColor={blue} />
@@ -205,7 +229,7 @@ function App() {
           <Footer />
         </Grid2>
       </Container>
-
+    </ThemeProvider>
   );
 }
 

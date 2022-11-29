@@ -27,9 +27,10 @@ export default function Paginate(props) {
   return (
     <Item>
       <ArrowLeftOutlinedIcon sx={{fontSize:'50px', margin: 0}} />
-      <div style={{display:'flex'}}>
+      <div style={{display:'flex',gap:'5px'}}>
         <h1>01</h1>
-        <h2>/03</h2>
+        <h2>/</h2>
+        <h2>03</h2>
       </div>
       <ArrowRightOutlinedIcon sx={{fontSize:'50px'}} />
     </Item>

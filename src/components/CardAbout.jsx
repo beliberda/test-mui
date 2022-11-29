@@ -8,7 +8,7 @@ import {
   ThemeProvider,
   Typography,
 } from "@mui/material";
-
+// тут создаем тему (но работает через одно место)
 const theme = createTheme({
   typography: {
     h1: {

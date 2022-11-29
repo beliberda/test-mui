@@ -1,7 +1,5 @@
 import * as React from "react";
-import { Card, styled, Typography } from "@mui/material";
-import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import Image from "mui-image";
+import { Box, Card, styled, Typography } from "@mui/material";
 import line from "../assets/line-h-svgrepo-com.svg";
 
 const Item = styled(Card)(({ theme }) => ({
@@ -21,10 +19,11 @@ const Item = styled(Card)(({ theme }) => ({
   flexDirection: "column",
   gap: "20px",
 }));
-
-const ItemImage = styled(Card)(({ theme }) => ({
+// создаем элемент стилизованный под Card и в параметрах передаем тему
+const ItemImage = styled(Box)(({ theme }) => ({
+  backgroundColor:'#282828',
   width: "40px",
-  height: "40px",
+  height: "5px",
   maxWidth: 40,
   maxHeight: 5,
   alignItems: "flex-start",
@@ -39,7 +38,6 @@ export default function CardDescript(props) {
     <Item sx={{ color: "#000", padding: "31px" }}>
       <Typography variant="h6">{props.title}</Typography>
       <ItemImage
-        src={line}
       ></ItemImage>
       <Typography variant="p1">{props.text}</Typography>
     </Item>

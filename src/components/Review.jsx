@@ -1,4 +1,4 @@
-import { Card, CardContent, Paper, styled, Typography } from "@mui/material";
+import { Card, CardContent, styled, Typography } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import Image from "mui-image";
 import { Box } from "@mui/system";
@@ -37,7 +37,7 @@ export default function Review(params) {
         }}
       >
         <Image sx={{ maxWidth: 60, maxHeight: 60 }} src={params.path}></Image>
-        <Typography variant="h6">Michael H. Jhonson</Typography>
+        <Typography variant="h6">{params.title}</Typography>
         <ItemStarts>
           <StarIcon />
           <StarIcon />
